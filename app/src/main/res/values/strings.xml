@@ -5,4 +5,10 @@
     <string name="login_welcome2">¡BIENVENIDOS!</string>
     <string name="login_create_account">Crear Cuenta</string>
     <string name="login_start_session">Iniciar Sesion</string>
+    <string name="fb_create_account">Crear con Facebook</string>
+    <string name="create_new_account">Crear Cuenta</string>
+    <string name="login_fb_start_session">Iniciar con Facebook</string>
+    <string name="login_username">Usuario</string>
+    <string name="login_password">Contraseña</string>
+    <string name="create_account_idnumber"># de Cedula</string>
 </resources>
