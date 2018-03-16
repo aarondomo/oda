@@ -1,15 +1,15 @@
-package com.oda.oda.ui;
+package com.oda.ui;
 
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 
-import com.oda.oda.R;
-import com.oda.oda.presenters.LoginActivityPresenter;
+import com.oda.R;
+import com.oda.presenters.LoginActivityPresenter;
 
-import static com.oda.oda.ui.LoginOptionFragment.CREATE_ACCOUNT;
-import static com.oda.oda.ui.LoginOptionFragment.LOGIN_ACCOUNT;
+import static com.oda.ui.LoginOptionFragment.CREATE_ACCOUNT;
+import static com.oda.ui.LoginOptionFragment.LOGIN_ACCOUNT;
 
 public class LoginActivity extends AppCompatActivity implements LoginActivityPresenter.View, LoginOptionFragment.OnOptionSelectedListener {
 

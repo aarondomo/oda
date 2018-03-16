@@ -1,4 +1,4 @@
-package com.oda.oda.ui;
+package com.oda.ui;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.oda.oda.R;
+import com.oda.R;
 
 public class LoginOptionFragment extends Fragment{
 

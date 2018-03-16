@@ -1,4 +1,4 @@
-package com.oda.oda.presenters;
+package com.oda.presenters;
 
 
 public class LoginActivityPresenter {
