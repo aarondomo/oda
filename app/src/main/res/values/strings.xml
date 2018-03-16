@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ODA</string>
+    <string name="login_quote">\"Un país, una civilización se puede juzgar por la forma en que trata a sus animales\"\nMahatma Gandhi</string>
+    <string name="login_welcome1">Amantes de los animales</string>
+    <string name="login_welcome2">¡BIENVENIDOS!</string>
+    <string name="login_create_account">Crear Cuenta</string>
+    <string name="login_start_session">Iniciar Sesion</string>
 </resources>
