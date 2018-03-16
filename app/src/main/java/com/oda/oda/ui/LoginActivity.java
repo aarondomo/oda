@@ -62,6 +62,9 @@ public class LoginActivity extends AppCompatActivity implements LoginActivityPre
     @Override
     public void optionSelected(int option) {
         switch (option){
+
+            //TODO: As these fragmentes share a lot of functionality and display,
+            //create an abstraction to share layout and functionality
             case LOGIN_ACCOUNT:
                 fragmentManager.beginTransaction()
                         .replace(frameLayout.getId(), new LoginFragment())
