@@ -6,15 +6,11 @@ import android.os.Bundle;
 import android.widget.FrameLayout;
 
 import com.oda.R;
-import com.oda.presenters.LoginActivityPresenter;
 
 import static com.oda.ui.LoginOptionFragment.CREATE_ACCOUNT;
 import static com.oda.ui.LoginOptionFragment.LOGIN_ACCOUNT;
 
-public class LoginActivity extends AppCompatActivity implements LoginActivityPresenter.View, LoginOptionFragment.OnOptionSelectedListener {
-
-    //TODO: inject presenter
-    LoginActivityPresenter presenter = new LoginActivityPresenter();
+public class LoginActivity extends AppCompatActivity implements LoginOptionFragment.OnOptionSelectedListener {
 
     private FrameLayout frameLayout;
 
@@ -26,8 +22,6 @@ public class LoginActivity extends AppCompatActivity implements LoginActivityPre
         setContentView(R.layout.activity_login);
 
         frameLayout = findViewById(R.id.fragment_login_container);
-
-        presenter.attachView(this);
 
         fragmentManager = getSupportFragmentManager();
 
@@ -51,12 +45,6 @@ public class LoginActivity extends AppCompatActivity implements LoginActivityPre
                     .commit();
         }
 
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        presenter.dettachView();
     }
 
     @Override
