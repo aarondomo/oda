@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.oda.oda.R;
+import com.oda.R;
 import com.oda.ui.HomeActivity;
 
 public class MainActivity extends AppCompatActivity {

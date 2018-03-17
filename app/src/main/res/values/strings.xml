@@ -14,4 +14,5 @@
     <string name="menu_nav_pet_friendly">Pet Friendly</string>
     <string name="menu_nav_volunteers">Voluntarios</string>
     <string name="menu_nav_donations">Donaciones</string>
+    <string name="complaints_record_complaint">Registrar Denuncia</string>
 </resources>
