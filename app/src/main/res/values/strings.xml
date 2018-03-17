@@ -15,4 +15,13 @@
     <string name="menu_nav_volunteers">Voluntarios</string>
     <string name="menu_nav_donations">Donaciones</string>
     <string name="complaints_record_complaint">Registrar Denuncia</string>
+    <string name="complaint_form_header">Si identificas una situación de maltrato en la cual la integridad de un animal doméstico puede estar comprometida, debes registrar tu denuncia correctamente fundamentada, llenando el siguiente formulario.</string>
+    <string name="complaint_form_title">Formulario de Denuncia</string>
+    <string name="complaint_form_send_complaint" />
+    <string name="my_complaints">Mis Denuncias</string>
+    <string name="form_name">Nombres</string>
+    <string name="form_last_name">Apellidos</string>
+    <string name="form_title">Formulario de Denuncia</string>
+    <string name="form_description">Si identificas una situación de maltrato en la cual la integridad de un animal doméstico puede estar comprometida, debes registrar tu denuncia correctamente fundamentada, llenando el siguiente formulario.</string>
+    <string name="form_send_complaint">Enviar Denuncia</string>
 </resources>
