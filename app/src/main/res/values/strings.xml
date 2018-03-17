@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">ODA</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="menu_nav_complaints">Denuncias</string>
+    <string name="menu_nav_adoptions">Adopciones</string>
+    <string name="menu_nav_orders">Pedidos</string>
+    <string name="menu_nav_pet_clinics">Veterinarias</string>
+    <string name="menu_nav_store">Tienda</string>
+    <string name="menu_nav_pet_friendly">Pet Friendly</string>
+    <string name="menu_nav_volunteers">Voluntarios</string>
+    <string name="menu_nav_donations">Donaciones</string>
 </resources>
