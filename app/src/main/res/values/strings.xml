@@ -28,4 +28,5 @@
     <string name="table_record_header_situation">Situacion</string>
     <string name="table_record_header_status">Status</string>
     <string name="complaint_form_saving_success">Tu Denuncia ha sido enviada a las autoridades de control municipal. Ellos se contactarán contigo lo antes posible.</string>
+    <string name="map_complaint_location">Esta es la ubicacion</string>
 </resources>

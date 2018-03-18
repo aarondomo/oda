@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.oda.R;
 import com.oda.di.DaggerMainComponent;
 import com.oda.di.MainModule;
@@ -25,14 +26,21 @@ public class ComplaintFormFragment extends Fragment implements ComplaintFormFrag
     ComplaintFormFragmentPresenter presenter;
 
     private Button sendComplaintButton;
+    private EditText editTextInformantName;
+    private EditText editTextInformantLastName;
+    private EditText editTextName;
+    private EditText editTextLastName;
+    private EditText editTextSituation;
+    private OnShowMap onShowMap;
+    private Button buttonLocationAddress;
 
-    EditText editTextInformantName;
-    EditText editTextInformantLastName;
-    EditText editTextName;
-    EditText editTextLastName;
-    EditText editTextSituation;
+    private LatLng latLng;
+
     EditText editTextAddress;
 
+    public interface OnShowMap{
+        public void showMap();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,6 +54,26 @@ public class ComplaintFormFragment extends Fragment implements ComplaintFormFrag
         editTextLastName = view.findViewById(R.id.edittext_last_name);
         editTextSituation = view.findViewById(R.id.edittext_situation);
         editTextAddress = view.findViewById(R.id.edittext_address);
+        buttonLocationAddress = view.findViewById(R.id.button_location_address);
+
+        setOnClickListeners();
+
+        setUpDagger();
+
+        presenter.attachView(this);
+
+        return view;
+    }
+
+
+    private void setOnClickListeners(){
+        buttonLocationAddress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((OnShowMap)getActivity()).showMap();
+            }
+        });
+
 
         sendComplaintButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,25 +81,19 @@ public class ComplaintFormFragment extends Fragment implements ComplaintFormFrag
 
 
                 presenter.sendComplaint(new Complaint(getStringFromEditText(editTextInformantName),
-                        getStringFromEditText(editTextInformantLastName),
-                        getStringFromEditText(editTextName),
-                        getStringFromEditText(editTextLastName),
-                        getStringFromEditText(editTextSituation),
-                        getStringFromEditText(editTextAddress),
-                        "12.0",
-                        "11.0",
-                        "imageurl//url",
-                        new Date().toString(),
-                        "En proceso"),
+                                getStringFromEditText(editTextInformantLastName),
+                                getStringFromEditText(editTextName),
+                                getStringFromEditText(editTextLastName),
+                                getStringFromEditText(editTextSituation),
+                                getStringFromEditText(editTextAddress),
+                                getLatitude(),
+                                getLongitude(),
+                                "imageurl//url",
+                                new Date().toString(),
+                                "En proceso"),
                         getString(R.string.complaint_form_saving_success));
             }
         });
-
-        setUpDagger();
-
-        presenter.attachView(this);
-
-        return view;
     }
 
     private String getStringFromEditText(EditText editText){
@@ -95,5 +117,25 @@ public class ComplaintFormFragment extends Fragment implements ComplaintFormFrag
     public void displayMessage(String title, String message) {
         AlertDialogBuilder.createNeutralAlertDialogWithIcon(getContext(), message, R.drawable.image_placeholder);
         getFragmentManager().popBackStack();
+    }
+
+    public void setLatLng(LatLng latLng) {
+        this.latLng = latLng;
+    }
+
+    private String getLatitude() {
+        if(latLng == null){
+            return "";
+        } else {
+            return Double.toString(latLng.latitude);
+        }
+    }
+
+    private String getLongitude() {
+        if(latLng == null){
+            return "";
+        } else {
+            return Double.toString(latLng.longitude);
+        }
     }
 }
