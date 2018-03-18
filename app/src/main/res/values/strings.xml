@@ -24,4 +24,8 @@
     <string name="form_title">Formulario de Denuncia</string>
     <string name="form_description">Si identificas una situación de maltrato en la cual la integridad de un animal doméstico puede estar comprometida, debes registrar tu denuncia correctamente fundamentada, llenando el siguiente formulario.</string>
     <string name="form_send_complaint">Enviar Denuncia</string>
+    <string name="table_record_header_date">Fecha</string>
+    <string name="table_record_header_situation">Situacion</string>
+    <string name="table_record_header_status">Status</string>
+    <string name="complaint_form_saving_success">Tu Denuncia ha sido enviada a las autoridades de control municipal. Ellos se contactarán contigo lo antes posible.</string>
 </resources>

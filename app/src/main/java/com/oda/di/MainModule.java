@@ -1,6 +1,8 @@
 package com.oda.di;
 
+import com.oda.model.FirebaseDbInteracter;
 import com.oda.presenters.ComplaintFormFragmentPresenter;
+import com.oda.presenters.ComplaintRecordFragmentPresenter;
 
 import dagger.Module;
 import dagger.Provides;
@@ -12,4 +14,15 @@ public class MainModule {
     public ComplaintFormFragmentPresenter providesComplaintFormFragmentPresenter(){
         return new ComplaintFormFragmentPresenter();
     }
+
+    @Provides
+    public FirebaseDbInteracter providesFirebaseDbInteracter(){
+        return new FirebaseDbInteracter();
+    }
+
+    @Provides
+    public ComplaintRecordFragmentPresenter providesComplaintRecordFragmentPresenter(){
+        return new ComplaintRecordFragmentPresenter();
+    }
+
 }

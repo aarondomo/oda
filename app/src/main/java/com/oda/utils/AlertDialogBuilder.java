@@ -25,4 +25,16 @@ public class AlertDialogBuilder {
                 })
                 .show();
     }
+
+    public static void createNeutralAlertDialogWithIcon(Context context, String message, int icon){
+        AlertDialog.Builder builder;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            builder = new AlertDialog.Builder(context, android.R.style.Theme_Material_Dialog_Alert);
+        } else {
+            builder = new AlertDialog.Builder(context);
+        }
+        builder.setMessage(message)
+                .setIcon(icon)
+                .show();
+    }
 }

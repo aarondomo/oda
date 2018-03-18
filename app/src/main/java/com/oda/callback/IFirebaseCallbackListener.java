@@ -3,11 +3,11 @@ package com.oda.callback;
 
 public interface IFirebaseCallbackListener<T> {
 
-    void childAdded(T trip);
+    void childAdded(T child);
 
-    void childChanged(T trip);
+    void childChanged(T child);
 
-    void childRemoved(T trip);
+    void childRemoved(T child);
 
-    void onFailure(Throwable t);
+    void onFailure(Throwable throwable);
 }
