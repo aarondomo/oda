@@ -115,6 +115,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/complaint_form_map_location"
             android:id="@+id/button_location_address"/>
     </TableRow>
 
@@ -126,10 +127,11 @@
     </TableRow>
 
     <TableRow>
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textview_add_images" />
+            android:text="@string/complaint_form_attach_image"
+            android:id="@+id/button_form_add_images" />
     </TableRow>
 
 </TableLayout>
