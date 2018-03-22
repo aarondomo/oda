@@ -99,6 +99,7 @@ public class ComplaintFormFragment extends Fragment implements ComplaintFormFrag
             public void onClick(View view) {
 
 
+                //TODO: Create validation logic and pass it to the presenter
                 presenter.sendComplaint(new Complaint(getStringFromEditText(editTextInformantName),
                                 getStringFromEditText(editTextInformantLastName),
                                 getStringFromEditText(editTextName),
@@ -152,7 +153,7 @@ public class ComplaintFormFragment extends Fragment implements ComplaintFormFrag
         }
     }
 
-
+    //TODO: Pass logic to interact with the Firebase Storage to the presenter
     private String uploadImage(Uri filePath) {
 
         if(filePath != null)
