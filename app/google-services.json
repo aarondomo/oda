@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "678154919108",
+    "firebase_url": "https://odafirebaseproject.firebaseio.com",
+    "project_id": "odafirebaseproject",
+    "storage_bucket": "odafirebaseproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678154919108:android:4b561c8966b3b240",
+        "android_client_info": {
+          "package_name": "com.oda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "678154919108-tqqh7oq7gcpg5614phuomkpeuuv43jns.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.oda",
+            "certificate_hash": "f99ca58722797036d1945e2a59773eb5d4198f44"
+          }
+        },
+        {
+          "client_id": "678154919108-v86vqk1pme7a962fnvhea782ot3husid.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAWPVjJvCY6F_DfT7oa99476dtvMCt6e8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "678154919108-v86vqk1pme7a962fnvhea782ot3husid.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

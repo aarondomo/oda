@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_complaints"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/menu_nav_complaints" />
+        <item
+            android:id="@+id/nav_adoptions"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/menu_nav_adoptions" />
+        <item
+            android:id="@+id/nav_orders"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/menu_nav_orders" />
+        <item
+            android:id="@+id/nav_pet_clinics"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/menu_nav_pet_clinics" />
+        <item
+            android:id="@+id/nav_store"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/menu_nav_store" />
+        <item
+            android:id="@+id/nav_pet_friendly"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/menu_nav_pet_friendly" />
+        <item
+            android:id="@+id/nav_volunteers"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/menu_nav_volunteers" />
+        <item
+            android:id="@+id/nav_donations"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/menu_nav_donations" />
+    </group>
+
+
+</menu>

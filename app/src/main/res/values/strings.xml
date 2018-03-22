@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">ODA</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="menu_nav_complaints">Denuncias</string>
+    <string name="menu_nav_adoptions">Adopciones</string>
+    <string name="menu_nav_orders">Pedidos</string>
+    <string name="menu_nav_pet_clinics">Veterinarias</string>
+    <string name="menu_nav_store">Tienda</string>
+    <string name="menu_nav_pet_friendly">Pet Friendly</string>
+    <string name="menu_nav_volunteers">Voluntarios</string>
+    <string name="menu_nav_donations">Donaciones</string>
+    <string name="complaints_record_complaint">Registrar Denuncia</string>
+    <string name="complaint_form_header">Si identificas una situación de maltrato en la cual la integridad de un animal doméstico puede estar comprometida, debes registrar tu denuncia correctamente fundamentada, llenando el siguiente formulario.</string>
+    <string name="complaint_form_title">Formulario de Denuncia</string>
+    <string name="complaint_form_send_complaint" />
+    <string name="my_complaints">Mis Denuncias</string>
+    <string name="form_name">Nombres</string>
+    <string name="form_last_name">Apellidos</string>
+    <string name="form_title">Formulario de Denuncia</string>
+    <string name="form_description">Si identificas una situación de maltrato en la cual la integridad de un animal doméstico puede estar comprometida, debes registrar tu denuncia correctamente fundamentada, llenando el siguiente formulario.</string>
+    <string name="form_send_complaint">Enviar Denuncia</string>
+    <string name="table_record_header_date">Fecha</string>
+    <string name="table_record_header_situation">Situacion</string>
+    <string name="table_record_header_status">Status</string>
+    <string name="complaint_form_saving_success">Tu Denuncia ha sido enviada a las autoridades de control municipal. Ellos se contactarán contigo lo antes posible.</string>
+    <string name="map_complaint_location">Esta es la ubicacion</string>
+    <string name="complaint_form_map_location">Localizacion en el Mapa</string>
+    <string name="complaint_form_attach_image">Adjuntar Imagen</string>
+    <string name="complaint_form_select_files">Seleccionar Archivos...</string>
 </resources>
