@@ -46,9 +46,6 @@ public class ComplaintRecordFragmentPresenter extends BasePresenter {
             @Override
             public void onSuccess(List<Complaint> complaints) {
                 view.displayComplaints(complaints);
-                for(Complaint complaint : complaints){
-                    Log.d("onsuccess: ", complaint.toString());
-                }
             }
 
             @Override

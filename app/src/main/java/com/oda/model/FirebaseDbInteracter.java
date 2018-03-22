@@ -1,5 +1,6 @@
 package com.oda.model;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -13,6 +14,7 @@ public class FirebaseDbInteracter {
 
     FirebaseDatabase firebaseDatabase ;
     DatabaseReference databaseReference;
+    FirebaseAuth firebaseAuth;
 
 
     public FirebaseDbInteracter() {
@@ -22,11 +24,13 @@ public class FirebaseDbInteracter {
 
 
     public void addComplaint(Complaint complaint) {
-        databaseReference.child("user_complaints").push().setValue(complaint);
+        firebaseAuth = FirebaseAuth.getInstance();
+        databaseReference.child("user_complaints").child(firebaseAuth.getCurrentUser().getUid()).push().setValue(complaint);
     }
 
     public Maybe<List<Complaint>> retrieveComplaints(){
-        DatabaseReference complaintsQuery = databaseReference.child("user_complaints");
+        firebaseAuth = FirebaseAuth.getInstance();
+        DatabaseReference complaintsQuery = databaseReference.child("user_complaints").child(firebaseAuth.getCurrentUser().getUid());
         return RxFirebaseDatabase.observeSingleValueEvent(complaintsQuery, DataSnapshotMapper.listOf(Complaint.class));
     }
 

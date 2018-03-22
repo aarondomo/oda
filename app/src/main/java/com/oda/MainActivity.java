@@ -4,10 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.oda.R;
-import com.oda.model.Complaint;
-import com.oda.ui.ComplaintsActivity;
-import com.oda.ui.HomeActivity;
+import com.oda.ui.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,6 +13,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        startActivity(new Intent(this, ComplaintsActivity.class));
+        startActivity(new Intent(this, LoginActivity.class));
     }
 }

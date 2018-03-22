@@ -148,6 +148,12 @@ public class ComplaintFormFragment extends Fragment implements ComplaintFormFrag
                     multimediaFiles.append(downloadReference);
                     multimediaFiles.append(",");
                 }
+            } else {
+                if(data.getData() != null){
+                    Uri uri = data.getData();
+                    String downloadReference = uploadImage(uri);
+                    multimediaFiles.append(downloadReference);
+                }
             }
 
         }
@@ -164,7 +170,7 @@ public class ComplaintFormFragment extends Fragment implements ComplaintFormFrag
 
             FirebaseStorage storage= FirebaseStorage.getInstance();
             StorageReference storageReference = storage.getReference();
-            storageReference = storageReference.child("images/complaints"+ UUID.randomUUID().toString());
+            storageReference = storageReference.child("images/complaints" + UUID.randomUUID().toString());
             storageReference.putFile(filePath)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
