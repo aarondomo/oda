@@ -78,6 +78,7 @@ public class CreateAccountFragment extends Fragment implements CreateAccountFrag
     @Override
     public void goToHomeScreen(){
         Intent intent = new Intent(getActivity(), ComplaintsActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 

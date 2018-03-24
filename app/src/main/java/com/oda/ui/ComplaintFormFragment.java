@@ -12,13 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.oda.R;
@@ -28,7 +27,6 @@ import com.oda.model.Complaint;
 import com.oda.presenters.ComplaintFormFragmentPresenter;
 import com.oda.utils.AlertDialogBuilder;
 
-import java.util.Date;
 import java.util.UUID;
 
 import javax.inject.Inject;
@@ -47,11 +45,6 @@ public class ComplaintFormFragment extends Fragment implements ComplaintFormFrag
     private OnShowMap onShowMap;
     private Button buttonLocationAddress;
     private Button buttonAddImage;
-
-
-    private LatLng latLng;
-
-    private StringBuffer multimediaFiles = new StringBuffer().append("");
 
     EditText editTextAddress;
     private static final int INTENT_REQUEST_CODE = 123;
@@ -106,10 +99,10 @@ public class ComplaintFormFragment extends Fragment implements ComplaintFormFrag
                                 getStringFromEditText(editTextLastName),
                                 getStringFromEditText(editTextSituation),
                                 getStringFromEditText(editTextAddress),
-                                getLatitude(),
-                                getLongitude(),
-                                new String(multimediaFiles),
-                                new Date().toString(),
+                                presenter.getLatitude(),
+                                presenter.getLongitude(),
+                                presenter.getMultimediafiles(),
+                                presenter.getFormattedTodaysDate(),
                                 "En proceso"),
                         getString(R.string.complaint_form_saving_success));
             }
@@ -138,21 +131,17 @@ public class ComplaintFormFragment extends Fragment implements ComplaintFormFrag
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK) {
-
             if(data.getClipData() != null) {
                 int itemCount = data.getClipData().getItemCount();
                 int currentItem = 0;
                 for(int i = 0; i < itemCount; i++){
                     Uri imageUri = data.getClipData().getItemAt(currentItem).getUri();
-                    String downloadReference = uploadImage(imageUri);
-                    multimediaFiles.append(downloadReference);
-                    multimediaFiles.append(",");
+                    uploadImage(imageUri);
                 }
             } else {
                 if(data.getData() != null){
                     Uri uri = data.getData();
-                    String downloadReference = uploadImage(uri);
-                    multimediaFiles.append(downloadReference);
+                    uploadImage(uri);
                 }
             }
 
@@ -160,43 +149,36 @@ public class ComplaintFormFragment extends Fragment implements ComplaintFormFrag
     }
 
     //TODO: Pass logic to interact with the Firebase Storage to the presenter
-    private String uploadImage(Uri filePath) {
+    private void uploadImage(Uri uri) {
 
-        if(filePath != null)
+        if(uri != null)
         {
-            final ProgressDialog progressDialog = new ProgressDialog(getContext());
-            progressDialog.setTitle("Uploading...");
-            progressDialog.show();
 
+            ProgressDialog progressDialog = new ProgressDialog(getContext());
+            progressDialog.setTitle("Uploading...");
+
+            FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
             FirebaseStorage storage= FirebaseStorage.getInstance();
             StorageReference storageReference = storage.getReference();
-            storageReference = storageReference.child("images/complaints" + UUID.randomUUID().toString());
-            storageReference.putFile(filePath)
+            storageReference = storageReference.child("images/complaints/"
+                    + firebaseAuth.getCurrentUser().getUid())
+                    .child(UUID.randomUUID().toString());
+            progressDialog.show();
+            storageReference.putFile(uri)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             progressDialog.dismiss();
-                            Toast.makeText(getContext(), "Uploaded", Toast.LENGTH_SHORT).show();
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             progressDialog.dismiss();
-                            Toast.makeText(getContext(), "Failed "+e.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    })
-                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                            double progress = (100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot
-                                    .getTotalByteCount());
-                            progressDialog.setMessage("Uploaded "+(int)progress+"%");
                         }
                     });
-            return storageReference.toString();
+            presenter.addMultimediaString(storageReference);
         }
-        return "";
     }
 
 
@@ -224,22 +206,6 @@ public class ComplaintFormFragment extends Fragment implements ComplaintFormFrag
     }
 
     public void setLatLng(LatLng latLng) {
-        this.latLng = latLng;
-    }
-
-    private String getLatitude() {
-        if(latLng == null){
-            return "";
-        } else {
-            return Double.toString(latLng.latitude);
-        }
-    }
-
-    private String getLongitude() {
-        if(latLng == null){
-            return "";
-        } else {
-            return Double.toString(latLng.longitude);
-        }
+        presenter.setLatLng(latLng);
     }
 }
