@@ -17,4 +17,53 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!-- Custom ODA Blue theme. -->
+    <style name="AppTheme.ODABlueTheme" parent="AppTheme.NoActionBar">
+        <item name="colorAccent">@color/custom_view_white_color</item>
+        <item name="android:background">@color/custom_view_white_theme_dark_blue_color</item>
+        <item name="android:textColor">@color/custom_view_white_color</item>
+        <item name="buttonStyle">@style/ButtonODABlueTheme</item>
+        <item name="editTextStyle">@style/EditTextODABlueTheme</item>
+    </style>
+
+    <style name="ButtonODABlueTheme" parent="@android:style/Widget.Button">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/custom_view_white_theme_dark_blue_color</item>
+        <item name="android:background">@drawable/round_button_oda_blue_theme</item>
+    </style>
+
+    <style name="EditTextODABlueTheme" parent="@android:style/Widget.EditText">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/custom_view_white_color</item>
+        <item name="android:textColorHint">@color/custom_view_white_color</item>
+        <item name="android:background">@drawable/round_edit_text_oda_blue_theme</item>
+    </style>
+
+    <!-- Custom ODA White theme. -->
+    <style name="AppTheme.ODAWhiteTheme" parent="AppTheme">
+        <item name="android:textColor">@color/custom_view_white_theme_dark_blue_color</item>
+        <item name="buttonStyle">@style/ButtonODAWhiteTheme</item>
+        <item name="editTextStyle">@style/EditTextODAWhiteTheme</item>
+    </style>
+
+    <style name="ButtonODAWhiteTheme" parent="@android:style/Widget.Button">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/custom_view_white_color</item>
+        <item name="android:background">@drawable/round_button_oda_white_theme</item>
+    </style>
+
+    <style name="ButtonFormODAWhiteTheme" parent="@android:style/Widget.Button">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/custom_view_white_theme_dark_blue_color</item>
+        <item name="android:background">@drawable/edit_text_oda_white_theme</item>
+    </style>
+
+    <style name="EditTextODAWhiteTheme" parent="@android:style/Widget.EditText">
+        <item name="android:textSize">12dp</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:textColor">@color/custom_view_white_theme_dark_blue_color</item>
+        <item name="android:background">@drawable/edit_text_oda_white_theme</item>
+    </style>
+
+
 </resources>

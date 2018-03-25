@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <stroke android:width="@dimen/custom_view_border_1dp"
+        android:color="@color/custom_view_ligth_gray_color" />
+
+    <corners android:radius="@dimen/custom_view_radius_5dp" />
+
+    // Add your desired padding
+    <padding
+        android:left="@dimen/custom_view_padding_20dp"
+        android:top="@dimen/custom_view_padding_10dp"
+        android:right="@dimen/custom_view_padding_20dp"
+        android:bottom="@dimen/custom_view_padding_10dp">
+    </padding>
+
+</shape>

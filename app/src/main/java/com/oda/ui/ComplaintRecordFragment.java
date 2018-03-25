@@ -80,6 +80,9 @@ public class ComplaintRecordFragment extends Fragment implements ComplaintRecord
                                                 getString(R.string.table_record_header_situation),
                                                 getString(R.string.table_record_header_status));
 
+                tableRow.setBackgroundColor(getResources().getColor(R.color.custom_view_background_gray_color));
+
+
                 tableLayouyComplaints.addView(tableRow);
 
                 for(final Complaint complaint : complaints) {
@@ -113,6 +116,8 @@ public class ComplaintRecordFragment extends Fragment implements ComplaintRecord
             textView.setText(text);
             tableRow.addView(textView);
         }
+
+        tableRow.setBackgroundColor(getResources().getColor(R.color.custom_view_ligth_gray_color));
 
         return tableRow;
     }

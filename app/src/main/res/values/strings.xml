@@ -44,4 +44,9 @@
     <string name="complaint_form_map_location">Localizacion en el Mapa</string>
     <string name="complaint_form_attach_image">Adjuntar Imagen</string>
     <string name="complaint_form_select_files">Seleccionar Archivos...</string>
+    <string name="form_title_informer">Denunciante</string>
+    <string name="form_title_dennounced">Denunciado</string>
+    <string name="form_title_situation">Situacion</string>
+    <string name="form_title_geolocation">Geolocalizacion</string>
+    <string name="form_title_backup_images">Imagenes de Respaldo</string>
 </resources>

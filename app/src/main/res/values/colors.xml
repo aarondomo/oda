@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="custom_view_blue_theme_blue_fb_color">#3d5b97</color>
+    <color name="custom_view_white_theme_dark_blue_color">#064276</color>
+    <color name="custom_view_ligth_gray_color">#e2e2e2</color>
+    <color name="custom_view_dark_gray_color">#f2f2f2</color>
+    <color name="custom_view_background_gray_color">#e7e7e7</color>
+    <color name="custom_view_white_color">#ffffff</color>
 </resources>
