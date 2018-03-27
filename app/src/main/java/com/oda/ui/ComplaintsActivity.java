@@ -32,8 +32,7 @@ public class ComplaintsActivity extends AppCompatActivity implements ComplaintRe
     private void displayComplaintRecordFragment(){
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction
-                .add(frameLayoutId, new ComplaintRecordFragment());
-        fragmentTransaction.addToBackStack(null);
+                .replace(frameLayoutId, new ComplaintRecordFragment());
         fragmentTransaction.commit();
     }
 

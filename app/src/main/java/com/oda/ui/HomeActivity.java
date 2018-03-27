@@ -1,5 +1,6 @@
 package com.oda.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -71,7 +72,8 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_complaints) {
-            // Handle the camera action
+            Intent intent = new Intent(getApplicationContext(), ComplaintsActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_adoptions) {
 
         } else if (id == R.id.nav_orders) {

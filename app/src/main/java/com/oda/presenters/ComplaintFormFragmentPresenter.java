@@ -45,7 +45,7 @@ public class ComplaintFormFragmentPresenter extends BasePresenter {
             view.displayMessage(missingInfo, "Apellido no puede estar vacio");
             return false;
         }
-        if(complaint.getInformantLastName().equals("")){
+        if(complaint.getSituation().equals("")){
             view.displayMessage(missingInfo, "Por favor describe la situacion");
             return false;
         }

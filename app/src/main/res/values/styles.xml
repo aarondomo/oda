@@ -46,6 +46,12 @@
         <item name="editTextStyle">@style/EditTextODAWhiteTheme</item>
     </style>
 
+    <style name="AppTheme.ODAWhiteTheme.NoActionBar" parent="AppTheme.NoActionBar">
+        <item name="android:textColor">@color/custom_view_white_theme_dark_blue_color</item>
+        <item name="buttonStyle">@style/ButtonODAWhiteTheme</item>
+        <item name="editTextStyle">@style/EditTextODAWhiteTheme</item>
+    </style>
+
     <style name="ButtonODAWhiteTheme" parent="@android:style/Widget.Button">
         <item name="android:textSize">16dp</item>
         <item name="android:textColor">@color/custom_view_white_color</item>

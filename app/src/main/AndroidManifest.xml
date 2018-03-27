@@ -17,7 +17,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="your_key_here"/>
+        android:value="your_key_here"/>
 
         <activity android:name=".MainActivity"
             android:screenOrientation="portrait">
@@ -26,10 +26,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.LoginActivity"></activity>
+
+        <activity android:name=".ui.LoginActivity">
+
+        </activity>
+
         <activity
             android:name=".ui.HomeActivity"
             android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.ODAWhiteTheme.NoActionBar"
             android:screenOrientation="portrait">
 
         </activity>
