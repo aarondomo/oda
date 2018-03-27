@@ -49,4 +49,5 @@
     <string name="form_title_situation">Situacion</string>
     <string name="form_title_geolocation">Geolocalizacion</string>
     <string name="form_title_backup_images">Imagenes de Respaldo</string>
+    <string name="complaint_status_in_process">En proceso</string>
 </resources>

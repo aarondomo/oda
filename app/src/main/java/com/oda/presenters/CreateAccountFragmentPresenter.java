@@ -63,8 +63,7 @@ public class CreateAccountFragmentPresenter extends BasePresenter {
             @Override
             public void onError(Throwable e) {
                 view.dismissProgressDialog();
-                Log.d("mytag", e.getMessage());
-
+                view.displayMessage("Algo anda mal",e.getMessage());
             }
 
             @Override
@@ -73,8 +72,8 @@ public class CreateAccountFragmentPresenter extends BasePresenter {
             }
         };
 
-        maybeObservable.observeOn(Schedulers.io())
-                .subscribeOn(AndroidSchedulers.mainThread())
+        maybeObservable.observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
                 .map(new Function<AuthResult, FirebaseUser>() {
                     @Override
                     public FirebaseUser apply(AuthResult authResult) throws Exception {

@@ -42,12 +42,14 @@ public class ComplaintFormFragment extends Fragment implements ComplaintFormFrag
     private EditText editTextName;
     private EditText editTextLastName;
     private EditText editTextSituation;
-    private OnShowMap onShowMap;
     private Button buttonLocationAddress;
     private Button buttonAddImage;
+    private EditText editTextAddress;
 
-    EditText editTextAddress;
+    private OnShowMap onShowMap;
+
     private static final int INTENT_REQUEST_CODE = 123;
+    private static final String IMAGES_PATH = "image/*";
 
     public interface OnShowMap{
         public void showMap();
@@ -86,25 +88,15 @@ public class ComplaintFormFragment extends Fragment implements ComplaintFormFrag
             }
         });
 
-
         sendComplaintButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-                //TODO: Create validation logic and pass it to the presenter
-                presenter.sendComplaint(new Complaint(getStringFromEditText(editTextInformantName),
-                                getStringFromEditText(editTextInformantLastName),
-                                getStringFromEditText(editTextName),
-                                getStringFromEditText(editTextLastName),
-                                getStringFromEditText(editTextSituation),
-                                getStringFromEditText(editTextAddress),
-                                presenter.getLatitude(),
-                                presenter.getLongitude(),
-                                presenter.getMultimediafiles(),
-                                presenter.getFormattedTodaysDate(),
-                                "En proceso"),
-                        getString(R.string.complaint_form_saving_success));
+                Complaint complaint = createComplaint();
+                if(presenter.isComplaintValid(complaint)){
+                    presenter.sendComplaint((complaint),
+                            getString(R.string.complaint_form_saving_success));
+                    getFragmentManager().popBackStack();
+                }
             }
         });
 
@@ -115,13 +107,26 @@ public class ComplaintFormFragment extends Fragment implements ComplaintFormFrag
             }
         });
 
+    }
 
+    private Complaint createComplaint(){
+        return new Complaint(getStringFromEditText(editTextInformantName),
+                getStringFromEditText(editTextInformantLastName),
+                getStringFromEditText(editTextName),
+                getStringFromEditText(editTextLastName),
+                getStringFromEditText(editTextSituation),
+                getStringFromEditText(editTextAddress),
+                presenter.getLatitude(),
+                presenter.getLongitude(),
+                presenter.getMultimediafiles(),
+                presenter.getFormattedTodaysDate(),
+                getString(R.string.complaint_status_in_process));
     }
 
     private void galleryIntent()
     {
         Intent intent = new Intent();
-        intent.setType("image/*");
+        intent.setType(IMAGES_PATH);
         intent.setAction(Intent.ACTION_GET_CONTENT);
         intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
         startActivityForResult(Intent.createChooser(intent, getString(R.string.complaint_form_select_files)), INTENT_REQUEST_CODE);
@@ -202,7 +207,6 @@ public class ComplaintFormFragment extends Fragment implements ComplaintFormFrag
     @Override
     public void displayMessage(String title, String message) {
         AlertDialogBuilder.createNeutralAlertDialogWithIcon(getContext(), message, R.drawable.image_placeholder);
-        getFragmentManager().popBackStack();
     }
 
     public void setLatLng(LatLng latLng) {

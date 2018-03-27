@@ -35,6 +35,27 @@ public class ComplaintFormFragmentPresenter extends BasePresenter {
         view.displayMessage("Hecho", confirmationText);
     }
 
+    public boolean isComplaintValid(Complaint complaint){
+        String missingInfo = "Hace falta informacion";
+        if(complaint.getInformantName().equals("")){
+            view.displayMessage(missingInfo, "Nombre no puede estar vacio");
+            return false;
+        }
+        if(complaint.getInformantLastName().equals("")){
+            view.displayMessage(missingInfo, "Apellido no puede estar vacio");
+            return false;
+        }
+        if(complaint.getInformantLastName().equals("")){
+            view.displayMessage(missingInfo, "Por favor describe la situacion");
+            return false;
+        }
+        if(complaint.getAddress().equals("")  && complaint.getLatitude().equals("")){
+            view.displayMessage(missingInfo, "Ingresa la direccion o localizala en el mapa");
+            return false;
+        }
+        return true;
+    }
+
     public String getMultimediafiles(){
         return new String(multimediaFiles);
     }

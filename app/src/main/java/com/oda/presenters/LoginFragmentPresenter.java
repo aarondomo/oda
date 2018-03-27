@@ -47,7 +47,7 @@ public class LoginFragmentPresenter extends BasePresenter {
 
             @Override
             public void onError(Throwable e) {
-
+                view.displayMessage("Algo anda mal", e.getMessage());
             }
 
             @Override
@@ -56,8 +56,8 @@ public class LoginFragmentPresenter extends BasePresenter {
             }
         };
 
-        maybeObservable.observeOn(Schedulers.io())
-                .subscribeOn(AndroidSchedulers.mainThread())
+        maybeObservable.observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
                 .subscribe(maybeObserver);
     }
 
