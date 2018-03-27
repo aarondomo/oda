@@ -50,4 +50,6 @@
     <string name="form_title_geolocation">Geolocalizacion</string>
     <string name="form_title_backup_images">Imagenes de Respaldo</string>
     <string name="complaint_status_in_process">En proceso</string>
+    <string name="edittext_situation_hint">Ingrese una descripción acerca de la situación de maltrato del animal</string>
+    <string name="edittext_address_hint">Direccion del lugar exacto donde ocurrió el maltrato</string>
 </resources>

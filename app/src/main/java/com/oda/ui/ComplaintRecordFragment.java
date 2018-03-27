@@ -117,7 +117,7 @@ public class ComplaintRecordFragment extends Fragment implements ComplaintRecord
             tableRow.addView(textView);
         }
 
-        tableRow.setBackgroundColor(getResources().getColor(R.color.custom_view_ligth_gray_color));
+        tableRow.setBackgroundColor(getResources().getColor(R.color.custom_view_white_color));
 
         return tableRow;
     }

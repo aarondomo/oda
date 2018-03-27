@@ -21,6 +21,7 @@ public class LoginActivity extends AppCompatActivity implements LoginOptionFragm
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         frameLayout = findViewById(R.id.fragment_login_container);
 
         fragmentManager = getSupportFragmentManager();

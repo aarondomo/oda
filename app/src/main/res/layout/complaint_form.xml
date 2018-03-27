@@ -112,6 +112,7 @@
             android:id="@+id/edittext_situation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:hint="@string/edittext_situation_hint"
             android:layout_margin="@dimen/form_margin_2dp" />
     </TableRow>
 
@@ -130,6 +131,7 @@
             android:id="@+id/edittext_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:hint="@string/edittext_address_hint"
             android:layout_margin="@dimen/form_margin_2dp" />
     </TableRow>
 
